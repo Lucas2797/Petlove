@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <body>
+        
+        {% if request.user.birth %}
+            
+        {% endif %}
+            
+        {% if request.user|lower|first == 'a' %}
+        <form method="POST">
+            {% csrf_token %}
+            {{form2.as_p}}
+            <input type="submit">GO
+        </form>
+        <h1 class="test">form2 (first a)</h1>
+        {% endif %}
+        {% if request.user|lower|first != 'a' %}
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit">GO
+        </form>
+        <h1 class="test">form1 (sem a)</h1>
+        {% endif %}
+    </body>
+    </html>
+{% endblock %}

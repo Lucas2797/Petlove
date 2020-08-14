@@ -1,0 +1,126 @@
+                           AGORA
+
+
+Qual o nome dos donos dos cachorros (Array de nomes)  
+    TENTAR O EXCEPT CASO O NOME JA ESTEJA NA LISTA
+
+
+Retorne as pessoas ordenando pelo custo que elas tem com os animais (Maior para menor)
+    tentar um order_by
+        Pets.objects.all().order_by(-custo)
+
+Levando em consideração o custo mensal, qual será o custo de 3 meses de cada pessoa?
+    Checar o calling foreign key fields (https://www.youtube.com/watch?v=2KqhBkMv7aM)
+    fazer um for pra todos os animais da pessoa (for p in People.objects.all(): custo_geral=Pets.objects.all)
+
+
+
+Crie um seed para popular o banco de dados de acordo com os dados abaixo:
+
+
+                        QUERYS 
+                        https://www.youtube.com/watch?v=WimXjp0ryOo&t=758s
+
+
+por o is_valid no pet_create_view
+
+models.py
+
+field_choices1 = [
+    (1, 'CACHORRO'),
+    (2, 'GATO'),
+    (3, 'OUTRO')
+]
+
+field_choices2 = [
+    (1, 'CACHORRO'),
+    (3, 'OUTRO')
+]
+
+def field_choice():
+    one = User
+    slug = slugify(one)
+    big = slug.upper()
+    initial_big = big[0]
+    if initial_big == 'A':
+        return field_choices1
+    else:
+        return field_choices2
+
+
+
+
+
+
+        verificar se nao ta dando o submit So no people form q ta junto com Userform antes de digitar os dados
+
+
+
+                                        DONE
+
+
+
+Quantos cachorros existem no sistema?
+    Pets.objects.filter(tipo=1).count()
+
+
+
+
+Qual é o custo médio dos animais do tipo cachorro?
+    variavel guardando custo => for O in Pets.objects.filter(tipo==1); variavel=O.custo
+        dividir pelo Pets.objects.all().count()
+
+
+    Pessoas que já tiverem custos com animais acima de 1000 não podem ter mais animais
+        Checar o calling foreign key fields (https://www.youtube.com/watch?v=2KqhBkMv7aM)
+            basicamente : PeopleObject.pets.all() (criar a variavel do PeopleObject) ou;
+                           v = People.objects.all
+
+
+
+    dar uma lida em validators (puxar um erro caso seja menor de 18)
+        lida no clean de forms tambem
+
+    PENSAR NUM OUTRO JEITO DE FAZER SEM O CLEAN DO PESSOA.BIRTHDAY NO CLEAN
+
+abrir um query para People.nome.startswith('a') no template if
+
+
+3 model add categoria e tentar selecionar por booleanfield
+
+tentar o if no template if request.user.startswith == 'a':
+
+
+
+tentar a  LOGICA nas Views usando if, elif puxando do query objects.filter e em cada caso
+displayar um form diferente DONE
+
+
+
+TA CRIANDO O USUARIO LINKADO COM O PEOPLE
+    Criar os 2 formularios pra cada caso
+    AGORA TESTAR O IF NO TEMPLATE COM startswith 'A'
+
+                                        CUSTO TOTAL
+
+
+    '''q5 = People.objects.all()
+    soma = 0
+    for p in People.objects.all():
+        q6 = Pets.objects.filter(pessoa=p)
+        for pet in q6:
+            soma += pet.custo
+            one = pet.pessoa
+    result = People.objects.all().order_by('soma')
+    '''
+
+'''
+    q7 = People.objects.all()
+    for p in q7:
+        q8 = Pets.objects.filter(pessoa=p)
+        l=[]
+        for pet in q8:
+            custa = pet.custo
+            l.append(custa)
+        custo_total2 = sum(l)
+'''

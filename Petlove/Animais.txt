@@ -1,0 +1,7 @@
+Pé de Pano, 199,99, Cavalo, Johnny Cash
+Rex, 99,99, Cachorro, Sid Vicious
+Ajudante do Papai Noel, 99,99, Cachorro, Axl Rose
+Rex, 103,99, Papagaio, Joey Ramone
+Flora, 103,99, Lhama, Bruce Dickinson
+Dino, 177,99, Iguana, Kurt Cobain
+Lassie, 407,99, Ornitorrinco, Elvis Presley

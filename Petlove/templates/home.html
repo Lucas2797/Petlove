@@ -1,0 +1,28 @@
+<h1>------------QUERIES------------</h1>
+
+<h2>Qual é o custo médio dos animais do tipo cachorro?</h2>
+<h2 style="color: green;">{{media}}</h2>
+
+<h2>Quantos cachorros existem no sistema?</h2>
+<h2 style="color: green;">{{quant}}</h2>
+
+<h2>Qual o nome dos donos dos cachorros (Array de nomes)</h2>
+<h2 style="color: green;">{{nomes}}</h2>
+
+<h2>Retorne as pessoas ordenando pelo custo que elas tem com os animais (Maior para menor)</h2>
+<h1>=============</h1>
+{% for t in t1 %}
+<h2 style="color: green;"> {{t.pessoa__user__username}} - {{t.soma|floatformat:2}} |||</h2>
+{% endfor %}
+
+
+<h2>Levando em consideração o custo mensal, qual será o custo de 3 meses de cada pessoa?</h2>
+{% for t in t2 %}
+    <h2 style="color: green;"> {{t.pessoa__user__username}} - {{t.soma|floatformat:2}} |||</h2>
+{% endfor %}
+
+
+
+{% for p in q7 %}
+    <h1>{{p.user}}</h1>
+{% endfor %}
